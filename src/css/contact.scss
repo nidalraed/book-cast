@@ -1,0 +1,592 @@
+// Colours Palette
+
+$navBg: #0f294e;
+$shadows : grey;
+$hoverBorder: #dfba18; 
+$NavhoverTxt:  #9EA4BA; 
+$bgSign: #9EA4BA;
+$bgContact: #D9D9D9;
+$white: white;
+
+// Font Properties
+    // Font Family 
+    $font : Arial, Helvetica, sans-serif;
+    // Font Size
+    $mainTxtSize: 20%;
+    $secondaryTxtSize: 20%;
+    $titleTxt: 40%;
+    // Font colours
+    $mainTxtCl: #0F2C59;
+    $secondaryTxtCl: grey;
+
+// Sizes made for about sec
+    $abtSecondaryTxtSize: 150%;
+    $abtTitleTxt: 200%;
+
+    $servCardWidth: 20%;
+    $servCardHeight: 300px;
+
+    $servCardShad: #0f294e9b;
+
+// Color Palette
+    $heroParagCl: #9EA4BA;
+    $heroHeaderCl: #0f294e;
+    $white : white;
+    $heroHeaderSz: 200%;
+    $heroParagSz: 100%;
+
+    $btnTxtCl: #0f294e;
+
+// Search bar dimensions styles
+    $heroSearchAlignTOP: -100%;
+    $heroSearchAlignLEFT: 20%;
+
+// Feedback variables
+    $feedbackTitleSz: 200%;
+    $feedbackParagraphSz: 110%;
+    
+    $feedbackTitleCl: white;
+
+// Nav and Footer styling 
+    $logoSz : 150%;
+    $navSecSZ : 120%;
+
+// Contact Us styling 
+    $contactUs: #9EA4BA;
+*{
+    font-family: $font;
+}
+// Nav bar styling 
+.navbar_container{
+    background-color: $navBg;
+    border-radius: 0 0 40px 40px;
+    height: 150px;
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 100%;
+    z-index: 99;
+    box-shadow: 0 0 15px;
+    font-family: $font;
+  }
+  .navbar_container-sec1 {
+    display: flex;
+    flex-direction: row;
+    padding-top: 0.25%;
+    padding-bottom: 0.25%;
+  }
+  .navbar_container hr{
+    color: $bgSign;
+  }
+  .navbar_container-sec1 .searchBarNav{
+    width: 30%;
+    position: absolute;
+    right: 1%;
+    flex: 1;
+    align-self: flex-end;
+    display: flex;
+    flex-direction: column;
+  }
+  .navbar_container-sec1 #searchQueryInputNav{
+    border: none;
+    height: 1.5rem;
+    font-size: 1rem;
+    background-color: $navBg;
+    text-align: center;
+    position: absolute;
+    right: 32%;
+    bottom: 0.5%;
+    color: $white;
+  }
+  .navbar_container-sec1 #searchQuerySubmitNav{
+    width:24px;
+    height:24px;
+    border: none;
+    outline: none;
+    background-color: $navBg;
+    position: absolute;
+    right: 32%;
+    bottom: 1%;
+  }
+  .navbar_container-logo{
+    font-size: $logoSz;
+    color: $white;
+    font-weight: bold;
+  }
+  .navbar_container-sec1 {
+    list-style-type: none;
+    display: flex;
+    flex-direction: row;
+    column-gap: 5%;
+  }
+  .navbar_container h3{
+    color: $white;
+  }
+  
+  .navbar_container a {
+  text-decoration: none;
+  font-size:  $navSecSZ;
+  }
+  
+  .navbar_container .item {
+  text-decoration: none;
+  color:$white;
+  font-weight: lighter;
+  }
+  
+  .navbar_container .item:hover {
+  color: $hoverBorder;
+  }
+  .navbar_container-sec2{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    list-style-type: none;
+  }
+  #navbar_container-signinup{
+    background-color: $navBg;
+    border: 1.5px solid;
+    border-radius: 15px;
+    border-color: $white;
+    color: $white;
+    height: 30px;
+    width: 100px;
+    text-align: center;
+    text-decoration: none;
+    position: absolute;
+    right: 2%;
+    cursor: pointer;
+  }
+  #navbar_container-signinup:hover{
+    background-color: $white;
+    color: $btnTxtCl;
+  }
+  #navbar_container-profile{
+    position: absolute;
+    right: 5%;
+    fill:$white;
+    // Hidden profile icon
+    // opacity: 0;
+    display: none;
+  }
+  #navbar_container-profile:hover{
+    fill: $hoverBorder;
+  }
+  
+  // Nav bar burger list START
+  .hamburger{
+    position: absolute;
+    top: 20px;
+    right: 4%;
+    width: 30px;
+    height: 4px;
+    background-color: $white;
+    border-radius: 10px;
+    cursor: pointer;
+    z-index: 99;
+    transition: 0.3s;
+  }
+  .hamburger::before,
+  .hamburger::after{
+    content: "";
+    position: absolute;
+    height: 4px;
+    right: 0;
+    background: $white;
+    border-radius: 10px;
+    transition: 0.3s;
+  }
+  .hamburger::before{
+    top:-10px;
+    width: 20px;
+  }
+  .hamburger::after{
+    top:10px;
+    width: 25px;
+  }
+  #navbar_burgerList{
+   width: 30px;
+   height: 40px;
+   z-index: 100;
+   cursor: pointer;
+   opacity: 0;  
+   position: absolute;
+   top: 15px;
+   right: 4%;
+  
+  }
+  .hamburger,
+  #navbar_burgerList{
+    display: none;
+  }
+  .navbar_container input:checked ~ .hamburger{
+    background: transparent;
+  }
+  .navbar_container input:checked ~ .hamburger::before{
+    top: 0;
+    transform: rotate(-45deg);
+    width: 30px;
+  }
+  .navbar_container input:checked ~ .hamburger::after{
+    top: 0;
+    transform: rotate(45deg);
+    width: 30px;
+  }
+  .navbar_burgerList{
+    z-index:0;
+  }
+  .navbar_burgerList-items{
+    position: absolute;
+    top: 0.25%;
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: start;
+    position: fixed;
+    right: -800px;
+    background: $navBg;  
+    width: 300px;
+    height: 100%;
+    padding-top:70px;
+    z-index:0;
+  
+  }
+  .navbar_burgerList-items{
+    list-style-type: none; 
+    z-index: 22;
+  }
+  li:hover{
+    fill: $hoverBorder;
+  }
+  .navbar_burgerList-items li{
+    width: 100%;
+  }
+  .navbar_burgerList-items li a,
+  .navbar_burgerList-items li a:hover {
+    padding-top: 30px;
+    font-size: 24px;
+    box-shadow: 0 1px 0 $shadows;
+    text-decoration: none;
+    // inset;
+    font-size: small;
+  }
+  .navbar_container input:checked ~ .navbar_burgerList-items{
+    right: 0;
+  }
+  .navbar_container-burger-logo{
+  color: $white;
+  font-size: large;
+  position: absolute;
+  left: 10%;
+  top: 15%;
+  display: none;
+  }
+  .navbar_container-burger-logo hr{
+  opacity: 0;
+  }
+  .navbar_burgerList-items .searchBarNav{
+    width: 30%;
+    position: absolute;
+    right: 1%;
+    flex: 1;
+    align-self: flex-end;
+    display: flex;
+    flex-direction: column;
+  }
+  .navbar_burgerList-items #searchQueryInputNav{
+    border: none;
+    height: 1.5rem;
+    font-size: 1rem;
+    background-color: $navBg;
+    text-align: center;
+    position: absolute;
+    right: 70px;
+    bottom: 3%;
+    color: $white;
+  }
+  .navbar_burgerList-items #searchQuerySubmitNav{
+    width:24px;
+    height:24px;
+    border: none;
+    outline: none;
+    background-color: $navBg;
+    position: absolute;
+    right: 70px;
+    bottom: 3%;
+  }
+  .navbar_burgerList-items #navbar_container-signinup{
+    background-color: $navBg;
+    border: 1.5px solid;
+    border-radius: 15px;
+    border-color: $white;
+    color: $white;
+    height: 30px;
+    width: 100px;
+    text-align: center;
+    text-decoration: none;
+    position: absolute;
+    right: 90px;
+    cursor: pointer;
+    margin-top: 20px;
+  }
+  .navbar_burgerList-items #navbar_container-signinup:hover{
+    background-color: $white;
+    color: $btnTxtCl;
+  }
+  @media screen and (max-width: 780px) {
+      .hamburger,
+      #navbar_burgerList{
+      display: block;
+      transform: scale(0.75);
+      }
+      .navbar_container-sec1{
+        display: none;
+        overflow: hidden;
+      }
+      .navbar_container-sec2{
+        display: none;
+        overflow: hidden;
+      }
+      .navbar_container hr{
+        opacity: 0;
+      }
+      .navbar_container-burger-logo hr{
+        opacity: 1;
+      }
+      .navbar_container{
+        height: 10%;
+      }
+      .navbar_container-burger-logo{
+        display: block;
+      }
+  }
+  // Nav bar burger list END
+  // Nav Bar Responsive 
+  @media screen and (min-width: 959px) and (max-width: 1300px){
+    .navbar_container-sec1 #searchQuerySubmitNav{
+      right: 40%;
+    }
+    .navbar_container-sec1 #searchQueryInputNav{
+      right: 34%;
+    }
+  }
+  @media screen and (min-width: 780px) and (max-width: 960px){
+    .navbar_container-sec1 #searchQuerySubmitNav{
+      right: 46%;
+    }
+    .navbar_container-sec1 #searchQueryInputNav{
+      right: 36%;
+    }
+  }
+  
+
+
+// Footer Styling 
+        .footbar_{
+            background-color: $navBg;
+            border-radius: 50px 50px 0 0 ;
+            width: 100%;
+            height: 250px;
+            bottom: 0;
+            top:15%;
+            padding-top: 2%;            
+            display: flex;
+            flex-direction: column;
+            box-shadow: 0 0 10px;
+            position: relative;
+        }
+        .footbar_container{
+            display: flex;
+            flex-direction: row;
+            
+        }
+        .footbar_container ul {
+            list-style-type: none;
+            display: flex;
+            flex-direction: column;
+        }
+        .footbar_container-logo{
+            color: $white;
+            font-size: $logoSz;
+            font-weight: bold;
+        }
+        .footbar_container li {
+        display: inline;
+        }
+        
+        .footbar_container a {
+        text-decoration: none;
+        font-size: $navSecSZ;
+        margin-left: 100px;
+        }
+        
+        .footbar_container .item {
+        text-decoration: none;
+        color: $white;
+        font-weight: lighter;
+        }
+        
+        .footbar_container .item:hover {
+        color: $NavhoverTxt;
+        }
+        .footbar_container-copyRight {
+        text-align: center;
+        font-family: $font;
+        color: $white;
+        font-size: 12px;
+        background-color: $navBg;
+        margin: 0;
+        margin-top: 1%;
+        padding-top: 6%;
+        }
+        .footbar_container-copyRight p{
+        padding: 0.3%;
+        }
+        // Footer - Contact Us
+        .footbar_contactus{
+        height: 900px;
+        background-color: #9ea4ba8a;
+        margin-top: 20%;
+        z-index: -1;
+        width: 80%;
+        // right: 1%;
+        border-radius: 90px 90px 0 0 ;
+        text-align: center; 
+        padding-top: 2%;
+        padding-bottom: 2%;
+        transform: translateX(12%);
+        }
+
+        // Contact us section styling
+        .body{
+            position: relative;
+        }
+        .footbar_contactus{
+            display: flex;
+            flex-direction: column;
+            row-gap: 3%;
+            justify-content: center;
+            align-items: center;
+            font-family: $font;
+            input::placeholder{
+                color: $mainTxtCl;
+            }
+        }
+        .footbar_contactus img{
+            width: 30%;
+            height: 20%;
+        }
+        .footbar_contactus h3{
+            font-size: 200%;
+            color: $mainTxtCl;
+        }
+        .footbar_contactus input[type=text]{
+            background-color: transparent;
+            border: none;
+            border-bottom: 1px solid $mainTxtCl;
+            font-size: 100%;
+            font-family: $font;
+            color: $btnTxtCl;
+            padding-top: 1%;
+            padding-bottom: 1%;
+            outline: none;
+        }
+        .footbar_contactus textarea[type=text]{
+            border:0;
+            border-radius: 15px;
+            margin: 10px 0;
+            padding: 20px;
+            outline: none;
+            background: $white;
+            font-size: 100%;
+            font-family: $font;
+            height: 100px;
+        }
+        .footbar_contactus button[type=submit]{
+            padding: 10px;
+            // background: $btnTxtCl;
+            color: $btnTxtCl;
+            border-radius: 20px;
+            width: 90px;
+            height: 40px;
+            background-color: transparent;
+            text-align: center;
+            border: 1px solid $btnTxtCl;
+        }
+        .footbar_contactus button:hover{
+            background-color:$navBg;
+            color:$white;
+        }
+
+/* Responsive styles for smaller screens */
+@media (max-width: 768px) {
+    .footbar_ {
+        height: auto;
+        padding: 20px;
+        bottom:0;
+       
+    }
+  
+    .footbar_container {
+        flex-direction: row;
+        align-items: center;
+    }
+  
+    .footbar_container ul {
+        padding: 10px;
+    }
+  
+    .footbar_container-logo {
+        font-size: 24px;
+    }
+  
+    .footbar_container a {
+        font-size: 16px;
+        margin-left: 0;
+    }
+  
+    .footbar_container-copyRight {
+        font-size: 14px;
+        padding: 20px 0;
+    }
+  
+    // .footbar_contactus {
+    //   position: absolute;
+    //   bottom: 260px;
+    //   z-index: -1;
+    //   width: 70%;
+    //   right: 15%;
+    // }
+    .footbar_contactus-link{
+      font-size: 15px;
+    }
+    .footbar_contactus-link:hover{
+      font-size:20px;
+    }
+    
+  }
+
+
+
+
+  // Contact Us responsive 
+@media screen and (max-width: 745px){
+    .footbar_contactus img{
+        width: 30%;
+        height: 10%;
+    }
+}
+@media screen and (max-width: 1309px){
+    .footbar_contactus img{
+        width: 30%;
+        height: 15%;
+    }
+}
+@media screen and (max-width: 737px){
+    .footbar_contactus img{
+        width: 30%;
+        height: 8%;
+    }
+}
+
+

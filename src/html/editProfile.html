@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@12"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@12/dist/sweetalert2.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="../css/editProfile.css">
+    <title>Edit Profile</title>
+</head>
+
+<body>
+    <div class="main-container">
+        <div class="imageBook"></div>
+        <div class="right-container">
+            <div class="column_details">
+                <div class="avatar-container">
+                    <div class="avatar">
+                        <img src="../../assets/profile-picture.webp" alt="Profile Image" id="avatar-image">
+                    </div>
+                </div>
+                <div class="content">
+                    <!-- <input type="file" accept="image/*" id="file-input" onchange="updateProfilePicture()">
+                    <button>
+                        <i class="fas fa-camera"></i> Edit picture
+                    </button> -->
+                </div>
+                <div class="links">
+                    <form id="profile-form">
+                        <input type="text" name="first" placeholder="Enter new name" id="fullname">
+                        <input type="password" name="newpassword" placeholder="Enter new password" id="password-input">
+                        <!-- الزر "ابديت" -->
+                        <button type="button" id="update"> Update </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.getElementById("update").addEventListener("click", () => {
+            const newFullName = document.getElementById("fullname").value;
+            const newPassword = document.getElementById("password-input").value;
+
+            // بناء كائن البيانات الجديدة
+            const updatedData = {
+                fullname: newFullName,
+                password: newPassword
+            };
+
+            fetch("http://localhost:3000/users", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify(updatedData)
+            })
+            .then(response => {
+                if (response.ok) {
+                    return response.json();
+                }
+                throw new Error("Failed to update data on the server.");
+            })
+            .then(data => {
+                // التعامل مع النجاح هنا
+                alert("تم التحديث!", "تم تحديث البيانات بنجاح.", "success");
+            })
+            .catch(error => {
+                // التعامل مع الأخطاء هنا
+                alert("Done");
+                // alert("خطأ!", "حدث خطأ أثناء الإرسال إلى الخادم.", "error");
+            });
+        });
+    </script>
+</body>
+</html>

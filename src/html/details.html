@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <title>Book Details</title>
+   
+  
+    <link rel="stylesheet" href="../css/details.css">
+    <script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+</head>
+
+<body>
+
+    <nav class="navbar_container">
+        <!-- Burger List -->
+        <label class="navbar_container-burger-logo">Book <b>Cast</b></label>
+        <input type="checkbox" name="Burger List" id="navbar_burgerList">
+        <div class="hamburger"></div>
+        <!-- Burger list items START -->
+        <ul class="navbar_burgerList-items">
+            <li><a class="item" href="/src/html/contact.html">Request a book</a></li>
+            <li><a class="item" href="/index.html">Home</a></li>
+            <li><a class="item" href="../html/category.html">Categories</a></li>
+            <li><a class="item" href="../html/about.html">About Us</a></li>
+            <li class="searchBarNav">
+                <input id="searchQueryInputNav" type="text" name="searchQueryInput" placeholder="Search a book" value="" />
+                <button id="searchQuerySubmitNav" type="submit" name="searchQuerySubmit" style="width:24px;height:24px"><svg style="width:24px;height:24px" ><path fill="white" d="M9.5,3A6.5,6.5 0 0,1 16,9.5C16,11.11 15.41,12.59 14.44,13.73L14.71,14H15.5L20.5,19L19,20.5L14,15.5V14.71L13.73,14.44C12.59,15.41 11.11,16 9.5,16A6.5,6.5 0 0,1 3,9.5A6.5,6.5 0 0,1 9.5,3M9.5,5C7,5 5,7 5,9.5C5,12 7,14 9.5,14C12,14 14,12 14,9.5C14,7 12,5 9.5,5Z" /></svg>
+                </button>
+            </li>
+            <li><button id="navbar_container-signinup"  value="Sing Up/ In">Sing Up/ In</button></li>
+        </ul>
+        <!-- Burger list items END-->
+        <ul class="navbar_container-sec1">
+            <li class="navbar_container-logo">Book <b>Cast</b></li>
+            <li><a class="item" href="//">Request a book</a></li>
+            <li class="searchBarNav">
+                    <input id="searchQueryInputNav" type="text" name="searchQueryInput" placeholder="Search a book" value="" />
+                    <button id="searchQuerySubmitNav" type="submit" name="searchQuerySubmit" style="width:24px;height:24px"><svg style="width:24px;height:24px" ><path fill="white" d="M9.5,3A6.5,6.5 0 0,1 16,9.5C16,11.11 15.41,12.59 14.44,13.73L14.71,14H15.5L20.5,19L19,20.5L14,15.5V14.71L13.73,14.44C12.59,15.41 11.11,16 9.5,16A6.5,6.5 0 0,1 3,9.5A6.5,6.5 0 0,1 9.5,3M9.5,5C7,5 5,7 5,9.5C5,12 7,14 9.5,14C12,14 14,12 14,9.5C14,7 12,5 9.5,5Z" /></svg>
+                    </button>
+            </li>
+            <li><button id="navbar_container-signinup"  value="Sing Up/ In">Sing Up/ In</button></li>
+            <li id="navbar_container-profile"><svg xmlns="http://www.w3.org/2000/svg" height="1.5em" viewBox="0 0 448 512">! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc.<path d="M304 128a80 80 0 1 0 -160 0 80 80 0 1 0 160 0zM96 128a128 128 0 1 1 256 0A128 128 0 1 1 96 128zM49.3 464H398.7c-8.9-63.3-63.3-112-129-112H178.3c-65.7 0-120.1 48.7-129 112zM0 482.3C0 383.8 79.8 304 178.3 304h91.4C368.2 304 448 383.8 448 482.3c0 16.4-13.3 29.7-29.7 29.7H29.7C13.3 512 0 498.7 0 482.3z"/></svg></i></li>
+        </ul>
+        <hr />
+        <ul class="navbar_container-sec2">
+            <li><a class="item" href="/index.html">Home</a></li>
+            <li><a class="item" href="../html/category.html">Categories</a></li>
+            <li><a class="item" href="../html/about.html">About Us</a></li>
+        </ul>
+        
+    </nav>
+
+
+<main id="main" class="container">
+<section id="details_hero" style="margin-top: 160px;" >
+    
+
+
+</section>
+<section id="details_review" style="margin-top: 100px;" >
+    <div class="row">
+        <div class="panel panel-default widget" style="border-radius: 1000px;">
+            <div class="panel-heading">
+                <span class="glyphicon glyphicon-comment"></span>
+                <h3 class="panel-title">
+                     Comments</h3>
+            </div>
+            <div>
+                <div class="row" style="margin-top: 20px;">
+                    <div class="col-md-1"><img src="https://i.imgur.com/hczKIze.jpg" width="50" class="user-img rounded-circle mr-2"></div>
+                    <div class="col-md-11">
+                        <input type="text" placeholder="Add commint .........." style="width: 100%; border-radius:100px ; height: 50px;" id="commint">
+                    </div>
+                  
+                </div>
+                
+                <div style="text-align: right; display: flex; flex-direction: row; justify-content: space-between;">
+                    <div style="margin-top: 30px;">
+                        <span class="fa fa-star " id="star1" onclick="star1()"></span>
+                        <span class="fa fa-star " id="star2" onclick="star2()"></span>
+                        <span class="fa fa-star "id="star3" onclick="star3()"></span>
+                        <span class="fa fa-star"id="star4" onclick="star4()"></span>
+                        <span class="fa fa-star"id="star5" onclick="star5()"></span></div>
+                        <div>
+                            <button id="review" style="width: 120px;border-radius: 100px;margin-top: 50px;margin-bottom: 50px;" type="submit"  onclick="addcom()"> review</button>
+                        </div>
+                   
+                </div>
+               
+                <div class="container ">
+
+                    <div class="row  ">
+        
+                        <div class="col-md-12">
+        
+                            <div class="headings d-flex justify-content-between align-items-center mb-3">
+                                <h5> comments</h5>
+        
+                               
+                                
+                            </div>
+                            <div id="comrender">
+
+                                
+                            </div>
+                           
+                           
+
+</section>
+<section id="details_suggested">
+
+    <div class="panel-heading">
+        <span class="glyphicon glyphicon-comment"></span>
+        <h3 class="panel-title" style="margin-top: 25px;">
+             Suggested</h3>
+    </div>
+    
+
+    
+    
+    
+    <div class=" cards-container" >
+        <div class="swiper-container card-list" id="card-slader">
+
+            
+        </div>
+        
+    </div>
+    
+      
+        
+         
+    
+</section>
+
+
+
+
+
+
+</main>
+<section class="footbar_">
+    <div class="footbar_contactus">
+        <p><a href="./src/html/contact.html" class="footbar_contactus-link">Contact Us</a></p>
+    </div>
+
+    <!-- Footbar -->
+<section class="footbar_">
+    <div class="footbar_contactus">
+        <p><a href="./src/html/contact.html" class="footbar_contactus-link">Contact Us</a></p>
+    </div>
+
+    <footer class="footbar_container">
+        <ul class="footbar_container-logo">Book <b>Cast</b></ul>
+
+        <ul class="footbar_container-sec1">
+            <li><a class="item" href="index.html">Home</a></li>
+            <li><a class="item" href="/src/html/category.html">Categories</a></li>
+        </ul>
+        <ul class="footbar_container-sec2">
+            <li><a class="item" href="/src/html/about.html">About Us</a></li>
+            <li><a class="item" href="/src/html/contact.html">Contact Us</a></li>
+        </ul>
+    </footer>
+    <div class="footbar_container-copyRight"><hr><p>credits for bookstore &#169; 2023</p> </div>    
+</section>
+<script src="../js/details.js"></script>
+
+
+</body>
+</html>

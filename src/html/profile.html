@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <link rel="stylesheet" href="../css/profile.css">
+  <title>Login</title>
+</head>
+
+<body>
+  <!-- نفس الشريط العلوي هنا يتضمن الأيقونة لملف المستخدم -->
+  <nav class="navbar_container">
+    <ul class="navbar_container-sec1">
+      <li class="navbar_container-logo">Books library</li>
+      <li><a class="item" href="//">Request a book</a></li>
+      <li class="searchBarNav">
+        <input id="searchQueryInputNav" type="text" name="searchQueryInput" placeholder="Search a book" value="" />
+        <button id="searchQuerySubmitNav" type="submit" name="searchQuerySubmit" style="width:24px;height:24px">
+          <svg style="width:24px;height:24px">
+            <path fill="white"
+              d="M9.5,3A6.5,6.5 0 0,1 16,9.5C16,11.11 15.41,12.59 14.44,13.73L14.71,14H15.5L20.5,19L19,20.5L14,15.5V14.71L13.73,14.44C12.59,15.41 11.11,16 9.5,16A6.5,6.5 0 0,1 3,9.5A6.5,6.5 0 0,1 9.5,3M9.5,5C7,5 5,7 5,9.5C5,12 7,14 9.5,14C12,14 14,12 14,9.5C14,7 12,5 9.5,5Z" />
+          </svg>
+        </button>
+      </li>
+      <!-- <li>
+                <a id="navbar_container-profile" class="item" href="../html/profile.html"><i class="fas fa-user"></i>My Profile</a>
+            </li> -->
+      <li id="navbar_container-profile"><a class="profile" href="../src/html/profile.html"> <svg
+            xmlns="http://www.w3.org/2000/svg" height="1.5em" viewBox="0 0 448 512" style="fill:white">! Font Awesome
+            Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial
+            License) Copyright 2023 Fonticons, Inc.
+            <path
+              d="M304 128a80 80 0 1 0 -160 0 80 80 0 1 0 160 0zM96 128a128 128 0 1 1 256 0A128 128 0 1 1 96 128zM49.3 464H398.7c-8.9-63.3-63.3-112-129-112H178.3c-65.7 0-120.1 48.7-129 112zM0 482.3C0 383.8 79.8 304 178.3 304h91.4C368.2 304 448 383.8 448 482.3c0 16.4-13.3 29.7-29.7 29.7H29.7C13.3 512 0 498.7 0 482.3z" />
+          </svg></a></i></li>
+    </ul>
+    <hr />
+    <ul class="navbar_container-sec2">
+      <li><a class="item" href="../index.html">Home</a></li>
+      <li><a class="item" href="../index.html">Top Rated</a></li>
+      <li><a class="item" href="../html/category.html">Categories</a></li>
+    </ul>
+  </nav>
+
+  <div class="column-left">
+    <div class="column_details">
+      <div class="avatar-container">
+        <div class="avatar">
+          <img src="../../assets/profile-picture.webp" alt="Profile Image">
+        </div>
+      </div>
+      <div class="content">
+        <h3 class="full-name">full name</h3>
+      </div>
+      <div class="links">
+        <a href="#"><i class="fas fa-book"></i> My Books</a>
+        <a href="../html/editProfile.html"><i class="fas fa-edit"></i> Edit Profile</a>
+        <a href="#"><i class="fas fa-sign-out-alt" id="logout"></i> Logout</a>
+      </div>
+
+    </div>
+
+  </div>
+
+  <div class="column-right">
+    <div class="bookshelf">
+      <div class="books">
+        <!-- <div class="book"></div>
+                <div class="book"></div>
+                <div class="book"></div> -->
+
+        <article class="book">
+          <div class="cover-back"></div>
+          <div class="pages">
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+          <div class="cover">
+            <!-- <span class="title">Book Title</span> -->
+          </div>
+          <div class="spine">
+            <span>my logo</span>
+          </div>
+          <div class="spine-shadow"></div>
+        </article>
+        <article class="book">
+          <div class="cover-back"></div>
+          <div class="pages">
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+          <div class="cover">
+            <!-- <span class="title">Book Title</span> -->
+          </div>
+          <div class="spine">
+            <span>my logo</span>
+          </div>
+          <div class="spine-shadow"></div>
+        </article>
+        <article class="book">
+          <div class="cover-back"></div>
+          <div class="pages">
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+          <div class="cover">
+            <!-- <span class="title">Book Title</span> -->
+          </div>
+          <div class="spine">
+            <span>my logo</span>
+          </div>
+          <div class="spine-shadow"></div>
+        </article>
+        <article class="book">
+          <div class="cover-back"></div>
+          <div class="pages">
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+          <div class="cover">
+            <!-- <span class="title">Book Title</span> -->
+          </div>
+          <div class="spine">
+            <span>my logo</span>
+          </div>
+          <div class="spine-shadow"></div>
+        </article>
+      </div>
+    </div>
+    <div class="bookshelf1">
+      <div class="books">
+        <!-- <div class="book"></div>
+                <div class="book"></div>
+                <div class="book"></div> -->
+
+        <article class="book">
+          <div class="cover-back"></div>
+          <div class="pages">
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+          <div class="cover">
+            <!-- <span class="title">Book Title</span> -->
+          </div>
+          <div class="spine">
+            <span>my logo</span>
+          </div>
+          <div class="spine-shadow"></div>
+        </article>
+
+        <article class="book">
+          <div class="cover-back"></div>
+          <div class="pages">
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+          <div class="cover">
+            <!-- <span class="title">Book Title</span> -->
+          </div>
+          <div class="spine">
+            <span>my logo</span>
+          </div>
+          <div class="spine-shadow"></div>
+        </article>
+
+        <article class="book">
+          <div class="cover-back"></div>
+          <div class="pages">
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+          <div class="cover">
+            <!-- <span class="title">Book Title</span> -->
+          </div>
+          <div class="spine">
+            <span>my logo</span>
+          </div>
+          <div class="spine-shadow"></div>
+        </article>
+
+        <article class="book">
+          <div class="cover-back"></div>
+          <div class="pages">
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+          <div class="cover">
+            <!-- <span class="title">Book Title</span> -->
+          </div>
+          <div class="spine">
+            <span>my logo</span>
+          </div>
+          <div class="spine-shadow"></div>
+        </article>
+
+
+      </div>
+
+    </div>
+
+    <!-- <a href="#" class="blog-slider__button">VIEW MORE</a> -->
+  </div>
+
+
+
+
+</body>
+<!-- <script src="../js/profile.js"></script> -->
+<script>
+  
+// جلب البريد الإلكتروني من السيشن ستورج
+const userEmail = sessionStorage.getItem('userEmail');
+
+if (userEmail) {
+  // إذا تم العثور على بريد إلكتروني في السيشن ستورج
+  fetch("http://localhost:3000/users")
+    .then((response) => response.json()) // تحويل الاستجابة إلى JSON
+    .then((data) => {
+      // البحث عن البيانات المطابقة لبريد الإلكتروني في البيانات المسترجعة
+      const userData = data.find((user) => user.email === userEmail);
+
+      if (userData) {
+        // إذا تم العثور على بيانات المستخدم
+        const fullNameElement = document.querySelector(".full-name");
+        // جلب الفل نيم من بيانات المستخدم
+        const fullName = userData.fullname;
+        // عرض الفل نيم في العنصر .full-name
+        fullNameElement.textContent = fullName;
+      } else {
+        console.error("User data not found for email: " + userEmail);
+      }
+    })
+    .catch((error) => {
+      console.error("Error fetching data:", error);
+    });
+} else {
+  console.error("User email not found in session storage.");
+}
+
+
+const logoutButton = document.getElementById("logout");
+
+// إضافة حدث النقر لزر تسجيل الخروج
+logoutButton.addEventListener("click", () => {
+  // قم بحذف البيانات من السيشن ستورج
+  sessionStorage.removeItem('userId');
+  sessionStorage.removeItem('userEmail');
+  
+  // قم بتوجيه المستخدم إلى صفحة الهوم
+  window.location.href = "../index.html";
+});
+
+</script>
+
+
+
+
+</html>

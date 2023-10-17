@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login & Signup Form HTML CSS | CodingNepal</title>
+  <link rel="stylesheet" href="../css/signIn.css">
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.all.min.js"></script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css">
+</head>
+
+<body>
+  <section class="wrapper">
+    <div class="form signup">
+      <header>Signup</header>
+      <form id="signupForm">
+        <input type="text" id="full-name" placeholder="Full name" required />
+        <!-- <input type="text" id="Last-name" placeholder="Last name" required /> -->
+        <input type="text" id="Email" placeholder="Email address" required />
+        <input type="password" id="Password" placeholder="Password" required />
+        <!-- <input type="text" id="address" placeholder="address" required /> -->
+
+        <div class="checkbox">
+          <input type="checkbox" id="signupCheck" />
+          <label for="signupCheck">I accept all terms & conditions</label>
+        </div>
+        <input type="submit" id="signupButton" value="Signup" />
+      </form>
+    </div>
+
+    <div class="form login">
+      <header>Login</header>
+      <form id="loginForm">
+        <input type="text" id="loginEmail" placeholder="Email address" required />
+        <input type="password" id="loginPassword" placeholder="Password" required />
+        <a href="#">Forgot password?</a>
+        <input type="submit" value="Login" id="loginbutton" />
+      </form>
+    </div>
+  </section>
+
+  <script type="module">
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/10.5.0/firebase-app.js";
+    import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/10.5.0/firebase-auth.js";
+    import { getFirestore, setDoc, doc, getDoc } from "https://www.gstatic.com/firebasejs/10.5.0/firebase-firestore.js";
+
+    const firebaseConfig = {
+  apiKey: "AIzaSyBGz6I5gbvyQ3k2-tZD0Z6SpIi8DXs-_8k",
+  authDomain: "firstweb-527e5.firebaseapp.com",
+  projectId: "firstweb-527e5",
+  storageBucket: "firstweb-527e5.appspot.com",
+  messagingSenderId: "871127140470",
+  appId: "1:871127140470:web:71ec22da15c9b3625af757",
+  measurementId: "G-GS95FSWLVV"
+};
+    const app = initializeApp(firebaseConfig);
+    const auth = getAuth();
+    const db = getFirestore();
+
+    document.getElementById("signupButton").addEventListener("click", async (e) => {
+      e.preventDefault();
+
+      const email = document.getElementById("Email").value;
+      const password = document.getElementById("Password").value;
+      const fullname = document.getElementById("full-name").value;
+      // const lastname = document.getElementById("Last-name").value;
+      // const address = document.getElementById("address").value;
+      
+
+      try {
+        const userCredential = await createUserWithEmailAndPassword(auth, email, password);
+        Swal.fire({
+          position: 'top-end',
+          icon: 'success',
+          title: 'User registered successfully',
+          showConfirmButton: false,
+          timer: 1500
+        });
+
+        const userRef = doc(db, "users", email);
+        await setDoc(userRef, {
+          fullname: fullname,
+          // lastname: lastname,
+          email: email,
+          password: password,
+        });
+        Swal.fire({
+          position: 'top-end',
+          icon: 'success',
+          title: 'User registered successfully',
+          showConfirmButton: false,
+          timer: 1500
+        });
+        // Add your success handling code here
+      } catch (error) {
+        Swal.fire({
+          icon: 'error',
+          title: 'Error',
+          text: error.message,
+        });
+      }
+    });
+    document.getElementById("loginbutton").addEventListener("click", async (e) => {
+  e.preventDefault();
+  const email = document.getElementById("loginEmail").value;
+  const password = document.getElementById("loginPassword").value;
+
+  signInWithEmailAndPassword(auth, email, password)
+    .then((userCredential) => {
+      const user = userCredential.user.uid;
+      password
+      // Store the user ID and email in session storage
+      sessionStorage.setItem('userId', user);
+      sessionStorage.setItem('userEmail', email);
+      sessionStorage.setItem('password', password);
+      
+
+
+
+      return getDoc(doc(db, "users", email));
+    })
+    .then((docSnap) => {
+      if (docSnap.exists()) {
+        const userData = docSnap.data();
+
+        const userJSON = JSON.stringify({
+          fullname: userData.fullname,
+          password: userData.password,
+          // address: userData.address,
+          email: userData.email,
+        });
+
+
+            //Send user data to the server or use it as needed
+            fetch("http://localhost:3000/users", {
+              method: "POST",
+              headers: {
+                "Content-Type": "application/json",
+              },
+              body: userJSON,
+            })
+            .then((response) => response.json())
+            .then((data) => {
+              console.log("Data from server:", data);
+            })
+            .catch((error) => {
+              console.error("Error sending data to the server:", error);
+            });
+            
+            window.location.href = "../../index.html"; // Redirect to the homepage
+          } else {
+            Swal.fire({
+              icon: 'error',
+              title: 'Error',
+              text: 'User data not found.',
+            });
+          }
+        })
+        .catch((error) => {
+          Swal.fire({
+            icon: 'error',
+            title: 'Error',
+            text: error.message,
+          });
+        });
+    });
+
+    const wrapper = document.querySelector(".wrapper"),
+      signupHeader = document.querySelector(".signup header"),
+      loginHeader = document.querySelector(".login header");
+
+    loginHeader.addEventListener("click", () => {
+      wrapper.classList.add("active");
+    });
+    signupHeader.addEventListener("click", () => {
+      wrapper.classList.remove("active");
+    });
+  </script>
+</body>
+
+</html>
